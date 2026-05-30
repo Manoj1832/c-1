@@ -19,8 +19,8 @@ export default function Home() {
         <Testimonials />
         <Stats />
         <BeforeAfter 
-          beforeImage="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1000&auto=format&fit=crop"
-          afterImage="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1000&auto=format&fit=crop"
+          beforeImage="/before.jpg"
+          afterImage="/after.jpg"
           title="Make Your Smile Shine Again"
           subtitle="Dental Practice"
         />
