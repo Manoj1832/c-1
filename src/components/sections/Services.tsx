@@ -31,7 +31,7 @@ const services = [
   { name: "Infection Control", href: "/services/infection-control", icon: ShieldCheck },
   { name: "Gum Therapy", href: "/services/gum-therapy", icon: HeartPulse },
   { name: "Teeth Whitening", href: "/services/teeth-whitening", icon: Sparkles },
-  { name: "Teeth Removal", href: "/services/extraction-wisdom-teeth-removal", icon: Scissors },
+  { name: "Teeth Removal", href: "/services/wisdom-removal", icon: Scissors },
   { name: "Laser Dentistry", href: "/services/laser-dentistry", icon: Zap },
 ];
 

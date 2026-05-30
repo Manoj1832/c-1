@@ -57,7 +57,7 @@ export default function Contact() {
         'service_gjwew1v',
         'template_wwpis9c',
         templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY_HERE' // Replace with your actual public key or set in .env.local
+        'H4cDbNSBPVXz32rSD'
       );
 
       setSubmitted(true);
