@@ -37,11 +37,39 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Replace with your actual form submission logic (API route, EmailJS, etc.)
-    console.log("Form submitted:", form);
-    setSubmitted(true);
+    setIsSubmitting(true);
+    
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        setForm({
+          name: "",
+          email: "",
+          phone: "",
+          date: "",
+          time: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -155,9 +183,10 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-brand text-white py-3 rounded-full font-semibold text-sm hover:bg-brand-dark transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full bg-brand text-white py-3 rounded-full font-semibold text-sm hover:bg-brand-dark transition-colors disabled:opacity-50 flex justify-center items-center gap-2"
                 >
-                  Submit
+                  {isSubmitting ? "Sending..." : "Submit Appointment"}
                 </button>
               </form>
             )}
