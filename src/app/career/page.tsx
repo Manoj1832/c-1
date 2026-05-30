@@ -80,9 +80,9 @@ export default function CareerPage() {
       <p className="text-gray-600 mt-4 text-sm leading-relaxed border-t border-gray-50 pt-4">
         {job.description}
       </p>
-      <button className="mt-6 inline-flex items-center gap-2 text-brand font-semibold text-sm hover:gap-3 transition-all">
+      <a href={`mailto:contact@hdentistry.in?subject=Application for ${job.title}`} className="mt-6 inline-flex items-center gap-2 text-brand font-semibold text-sm hover:gap-3 transition-all">
         APPLY NOW <ArrowRight className="w-4 h-4" />
-      </button>
+      </a>
     </div>
   );
 

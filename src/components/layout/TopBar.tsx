@@ -22,15 +22,15 @@ export function TopBar() {
 
           <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
             <a
-              href="tel:08460562924"
+              href="tel:+919363629361"
               className="flex items-center gap-2 text-silver hover:text-white transition-colors"
-              aria-label="Call us at 08460562924"
+              aria-label="Call us at 9363629361"
             >
               <IconPhone size={16} />
-              <span className="hidden sm:inline">08460562924</span>
+              <span className="hidden sm:inline">9363629361</span>
             </a>
             <a
-              href="https://wa.me/918460562924"
+              href="https://wa.me/919363629361"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-silver hover:text-green-400 transition-colors"

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Clock, Users, Star, Stethoscope, HeartPulse, Syringe } from "lucide-react";
+import { useInView, animate } from "framer-motion";
 
 const stats = [
   {
@@ -45,33 +46,17 @@ const stats = [
 function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const duration = 2000;
-          const steps = 60;
-          const increment = target / steps;
-          let current = 0;
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              setCount(target);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(current));
-            }
-          }, duration / steps);
-        }
-      },
-      { threshold: 0.3 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [target]);
+    if (isInView) {
+      const controls = animate(0, target, {
+        duration: 2,
+        onUpdate: (value) => setCount(Math.floor(value)),
+      });
+      return controls.stop;
+    }
+  }, [target, isInView]);
 
   return (
     <span ref={ref} className="text-3xl font-bold text-brand">

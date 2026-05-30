@@ -77,15 +77,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0">
-<Image
-  src="/h-dentistry-logo.png"
-  alt="H Dentistry"
-  width={190}
-  height={60}
-  priority
-  className="object-contain"
-/>
+          <Link href="/" className="flex-shrink-0 relative w-36 sm:w-48 h-12 sm:h-16">
+            <Image
+              src="/h-dentistry-logo.png"
+              alt="H Dentistry"
+              fill
+              priority
+              className="object-contain object-left"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -259,31 +258,30 @@ export default function Header() {
           <nav className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <div key={link.label}>
-                <button
-                  onClick={() =>
-                    setOpenDropdown(
-                      openDropdown === link.label
-                        ? null
-                        : link.label
-                    )
-                  }
-                  className="
-                    w-full
-                    flex
-                    items-center
-                    justify-between
-                    px-3
-                    py-2.5
-                    text-sm
-                    font-medium
-                    text-gray-700
-                    hover:bg-gray-50
-                    rounded-lg
-                  "
-                >
-                  <span>{link.label}</span>
-
-                  {link.children && (
+                {link.children ? (
+                  <button
+                    onClick={() =>
+                      setOpenDropdown(
+                        openDropdown === link.label
+                          ? null
+                          : link.label
+                      )
+                    }
+                    className="
+                      w-full
+                      flex
+                      items-center
+                      justify-between
+                      px-3
+                      py-2.5
+                      text-sm
+                      font-medium
+                      text-gray-700
+                      hover:bg-gray-50
+                      rounded-lg
+                    "
+                  >
+                    <span>{link.label}</span>
                     <ChevronDown
                       className={`w-4 h-4 transition-transform ${
                         openDropdown === link.label
@@ -291,8 +289,28 @@ export default function Header() {
                           : ""
                       }`}
                     />
-                  )}
-                </button>
+                  </button>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="
+                      w-full
+                      flex
+                      items-center
+                      justify-between
+                      px-3
+                      py-2.5
+                      text-sm
+                      font-medium
+                      text-gray-700
+                      hover:bg-gray-50
+                      rounded-lg
+                    "
+                  >
+                    <span>{link.label}</span>
+                  </Link>
+                )}
 
                 {link.children &&
                   openDropdown === link.label && (

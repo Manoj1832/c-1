@@ -54,11 +54,10 @@ export default function AboutUsPage() {
             {/* Image Right */}
             <div className="relative w-full h-[400px] bg-brand/5 rounded-3xl overflow-hidden flex items-center justify-center p-8">
               <Image
-                src="/h-dentistry-logo.png"
-                alt="H Dentistry Logo"
-                width={300}
-                height={300}
-                className="object-contain hover:scale-105 transition-transform duration-500"
+                src="/hero-left.jpg"
+                alt="H Dentistry Mission"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-500"
               />
             </div>
           </div>
@@ -67,11 +66,10 @@ export default function AboutUsPage() {
              {/* Image Left */}
              <div className="relative w-full h-[400px] bg-brand/5 rounded-3xl overflow-hidden flex items-center justify-center p-8 order-2 lg:order-1">
               <Image
-                src="/hero-left.jpg"
-                alt="H Dentistry Mission"
-                width={300}
-                height={300}
-                className="object-contain hover:scale-105 transition-transform duration-500"
+                src="/hero-img.jpg"
+                alt="H Dentistry Clinic"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
 

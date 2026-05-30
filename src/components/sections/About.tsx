@@ -13,10 +13,10 @@ export default function About() {
             <div className="flex justify-center">
               <div className="relative w-72 h-72 lg:w-96 lg:h-96">
                 <Image
-                  src="/h-dentistry-logo.png"
+                  src="/hero-left.jpg"
                   alt="H Dentistry"
                   fill
-                  className="object-contain"
+                  className="object-cover object-top rounded-3xl shadow-lg"
                 />
               </div>
             </div>

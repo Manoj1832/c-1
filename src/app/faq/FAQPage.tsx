@@ -65,7 +65,7 @@ const faqItems = [
     category: "scheduling",
     question: "Can I book an appointment via WhatsApp?",
     answer:
-      "Absolutely. You can reach us directly on WhatsApp at +91 84605 62924. Send us your name, contact number, and preferred time and we'll confirm your slot promptly.",
+      "Absolutely. You can reach us directly on WhatsApp at +91 93636 29361. Send us your name, contact number, and preferred time and we'll confirm your slot promptly.",
   },
   {
     category: "children",
@@ -89,7 +89,7 @@ const faqItems = [
     category: "general",
     question: "What should I do in a dental emergency?",
     answer:
-      "Call us immediately at 08460562924 — we're available 24/7. For knocked-out teeth, keep the tooth moist (in milk or saliva) and reach us within 30 minutes for the best chance of reimplantation.",
+      "Call us immediately at 9363629361 — we're available 24/7. For knocked-out teeth, keep the tooth moist (in milk or saliva) and reach us within 30 minutes for the best chance of reimplantation.",
   },
   {
     category: "treatments",
@@ -382,7 +382,7 @@ export function FAQPage() {
               </p>
               <div className="flex flex-wrap gap-3 justify-center">
                 <a
-                  href="tel:08460562924"
+                  href="tel:+919363629361"
                   className="inline-flex items-center gap-2 px-6 py-3 transition-opacity hover:opacity-85"
                   style={{
                     fontFamily: "'Outfit', sans-serif",
@@ -395,7 +395,7 @@ export function FAQPage() {
                   Call Us Now
                 </a>
                 <a
-                  href="https://wa.me/918460562924"
+                  href="https://wa.me/919363629361"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 transition-all hover:bg-[#111111] hover:text-white"

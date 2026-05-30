@@ -13,7 +13,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "H Dentistry Erode | Best Dental Clinic | Dr. Harini Sri K",
   description:
-    "H Dentistry in Kumalankutti, Erode — Advanced dental care by Dr. Harini Sri K (MDS, FICOI USA, BPS SWISS). Root Canal, Braces, Laser Dentistry, Implants. Open 24/7. Call 08460562924.",
+    "H Dentistry in Kumalankutti, Erode — Advanced dental care by Dr. Harini Sri K (MDS, FICOI USA, BPS SWISS). Root Canal, Braces, Laser Dentistry, Implants. Open 24/7. Call 9363629361.",
   keywords: [
     "dental clinic erode",
     "dentist erode",
@@ -28,10 +28,25 @@ export const metadata: Metadata = {
     title: "H Dentistry Erode | Best Dental Clinic | Dr. Harini Sri K",
     description:
       "Advanced dental care by Dr. Harini Sri K (MDS, FICOI USA, BPS SWISS). Root Canal, Braces, Laser Dentistry, Implants. Open 24/7.",
-    url: "https://hdentistryerode.com",
+    url: "https://hdentistry.in",
     siteName: "H Dentistry",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "https://hdentistry.in/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "H Dentistry Erode",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "H Dentistry Erode | Best Dental Clinic | Dr. Harini Sri K",
+    description:
+      "Advanced dental care by Dr. Harini Sri K (MDS, FICOI USA, BPS SWISS). Root Canal, Braces, Laser Dentistry, Implants. Open 24/7.",
+    images: ["https://hdentistry.in/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -47,7 +62,7 @@ const jsonLd = {
   "@type": "Dentist",
   name: "H Dentistry",
   doctor: "Dr. Harini Sri K",
-  telephone: "08460562924",
+  telephone: "9363629361",
   openingHours: "Mo-Su 00:00-23:59",
   address: {
     "@type": "PostalAddress",
@@ -62,7 +77,7 @@ const jsonLd = {
     ratingValue: "4.6",
     reviewCount: "22",
   },
-  url: "https://hdentistryerode.com",
+  url: "https://hdentistry.in",
 };
 
 export default function RootLayout({
@@ -73,7 +88,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={poppins.variable}>
       <head>
-        <link rel="canonical" href="https://hdentistryerode.com" />
+        <link rel="canonical" href="https://hdentistry.in" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

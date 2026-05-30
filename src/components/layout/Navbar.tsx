@@ -97,14 +97,14 @@ export function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+918460562924"
+              href="tel:+919363629361"
               className="flex items-center gap-2 px-4 py-2 bg-brand text-white rounded-full text-sm font-semibold hover:bg-brand-dark transition-colors"
             >
               <Phone className="w-4 h-4" />
               Call Now
             </a>
             <a
-              href="https://wa.me/918460562924"
+              href="https://wa.me/919363629361"
               className="flex items-center gap-2 px-4 py-2 border-2 border-brand text-brand rounded-full text-sm font-semibold hover:bg-brand hover:text-white transition-colors"
             >
               WhatsApp
@@ -163,14 +163,14 @@ export function Navbar() {
             ))}
             <div className="pt-3 flex flex-col gap-2 border-t border-gray-100">
               <a
-                href="tel:+918460562924"
+                href="tel:+919363629361"
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-brand text-white rounded-full text-sm font-semibold"
               >
                 <Phone className="w-4 h-4" />
                 Call Now
               </a>
               <a
-                href="https://wa.me/918460562924"
+                href="https://wa.me/919363629361"
                 className="flex items-center justify-center gap-2 px-4 py-3 border-2 border-brand text-brand rounded-full text-sm font-semibold"
               >
                 WhatsApp

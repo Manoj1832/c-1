@@ -109,7 +109,7 @@ export function CTABanner() {
                 <ArrowRight size={14} />
               </a>
               <a
-                href="tel:08460562924"
+                href="tel:+919363629361"
                 className="inline-flex items-center gap-2 px-6 py-3.5 transition-all hover:bg-white/10"
                 style={{
                   fontFamily: "'Outfit', sans-serif",
@@ -123,7 +123,7 @@ export function CTABanner() {
                 Call Now
               </a>
               <a
-                href="https://wa.me/918460562924"
+                href="https://wa.me/919363629361"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3.5 transition-all hover:opacity-90"
@@ -157,7 +157,7 @@ export function CTABanner() {
               },
               {
                 icon: Phone,
-                title: "08460562924",
+                title: "9363629361",
                 subtitle: "Direct line to the clinic — no waiting",
               },
               {

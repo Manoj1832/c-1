@@ -19,8 +19,8 @@ export default function Home() {
         <Testimonials />
         <Stats />
         <BeforeAfter 
-          beforeImage="https://www.32dentalcare.org/wp-content/uploads/2022/12/man-showing-his-teeth3-YUFNXWG.jpg"
-          afterImage="https://www.32dentalcare.org/wp-content/uploads/2022/12/man-showing-his-teeth4-YUFNXWG.jpg"
+          beforeImage="/before-after-1.jpg"
+          afterImage="/before-after-2.jpg"
           title="Make Your Smile Shine Again"
           subtitle="Dental Practice"
         />

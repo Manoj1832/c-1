@@ -206,9 +206,9 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
                 <div>
                   <h3 className="font-bold text-[20px] text-gray-900 mb-1">Quick Contact</h3>
                   <p className="text-[15px] text-gray-600 mb-2">Feel free to contact us</p>
-                  <a href="tel:08460562924" className="text-[15px] text-gray-900 font-medium hover:text-brand">+91 8460562924</a>
+                  <a href="tel:+919363629361" className="text-[15px] text-gray-900 font-medium hover:text-brand">+91 9363629361</a>
                   <br />
-                  <a href="mailto:contact@hdentistryerode.com" className="text-[15px] text-gray-900 font-medium hover:text-brand break-all">contact@hdentistryerode.com</a>
+                  <a href="mailto:contact@hdentistry.in" className="text-[15px] text-gray-900 font-medium hover:text-brand break-all">contact@hdentistry.in</a>
                 </div>
               </div>
 
