@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const services = [
   "Braces - Orthodontics",
@@ -44,26 +45,31 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const templateParams = {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        service: form.service,
+        message: form.message,
+      };
 
-      if (res.ok) {
-        setSubmitted(true);
-        setForm({
-          name: "",
-          email: "",
-          phone: "",
-          date: "",
-          time: "",
-          service: "",
-          message: "",
-        });
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
+      await emailjs.send(
+        'service_gjwew1v',
+        'template_wwpis9c',
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY_HERE' // Replace with your actual public key or set in .env.local
+      );
+
+      setSubmitted(true);
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        date: "",
+        time: "",
+        service: "",
+        message: "",
+      });
     } catch (error) {
       console.error(error);
       alert("Something went wrong. Please try again.");
