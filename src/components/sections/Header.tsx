@@ -8,14 +8,10 @@ import { Menu, X, ChevronDown, Phone } from "lucide-react";
 const navLinks = [
   { label: "Home", href: "/" },
 
-  {
-    label: "About Us",
-    href: "/about-us",
-    children: [
-      { label: "Management Team", href: "/management-team" },
-      { label: "Professional Team", href: "/about-us#professional-team" },
-    ],
-  },
+{
+  label: "About Us",
+  href: "/about-us",
+},
 
   {
     label: "Membership Plans",
