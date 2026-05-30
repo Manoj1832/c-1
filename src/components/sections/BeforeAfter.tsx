@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { MoveHorizontal } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface BeforeAfterProps {
   beforeImage: string;
@@ -66,7 +67,13 @@ export default function BeforeAfter({
     <section className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4 md:px-6">
         {/* Header */}
-        <div className="text-center mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
           <p className="uppercase tracking-[4px] text-gray-500 font-semibold text-sm">
             {subtitle}
           </p>
@@ -74,10 +81,14 @@ export default function BeforeAfter({
           <h2 className="mt-4 text-4xl md:text-5xl font-medium text-black">
             {title}
           </h2>
-        </div>
+        </motion.div>
 
         {/* Slider */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
           ref={containerRef}
           className="relative overflow-hidden rounded-[30px] shadow-2xl select-none"
           style={{ aspectRatio: "16/9" }}
@@ -154,7 +165,7 @@ export default function BeforeAfter({
               AFTER
             </span>
           </div>
-        </div>
+        </motion.div>
 
         <p className="text-center text-gray-500 mt-6">
           Drag the slider to compare before and after results

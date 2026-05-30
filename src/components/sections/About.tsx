@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Quote } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -10,7 +13,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image side */}
-            <div className="flex justify-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="flex justify-center"
+            >
               <div className="relative w-72 h-72 lg:w-96 lg:h-96">
                 <Image
                   src="/hero-left.jpg"
@@ -19,10 +28,16 @@ export default function About() {
                   className="object-cover object-top rounded-3xl shadow-lg"
                 />
               </div>
-            </div>
+            </motion.div>
 
             {/* Content side */}
-            <div className="space-y-5">
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="space-y-5"
+            >
               <p className="section-label">About H Dentistry</p>
               <h2 className="section-title">
                 Transforming Smiles With Precision Dentistry
@@ -33,14 +48,20 @@ export default function About() {
               <Link href="/about-us" className="btn-primary inline-block">
                 Read More
               </Link>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Mission Quote Banner */}
       <section className="py-16 bg-gray-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6"
+        >
           <Quote className="w-10 h-10 text-brand mx-auto" />
           <h3 className="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed">
             <span className="text-brand font-bold">H Dentistry&apos;s</span>{" "}
@@ -49,7 +70,7 @@ export default function About() {
           <Link href="/about-us" className="btn-primary inline-block">
             More About Us
           </Link>
-        </div>
+        </motion.div>
       </section>
     </>
   );

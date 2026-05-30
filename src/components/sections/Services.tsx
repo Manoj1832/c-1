@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Smile,
@@ -50,7 +51,13 @@ export default function Services() {
     <section id="services" className="py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12"
+        >
           <div>
             <p className="section-label">Our Services</p>
             <h2 className="section-title mb-0">
@@ -66,10 +73,16 @@ export default function Services() {
               className="object-contain hidden md:block"
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* Scrollable carousel */}
-        <div className="relative">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="relative"
+        >
           <button
             onClick={() => scroll("left")}
             className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-brand hover:bg-brand hover:text-white transition-colors"
@@ -108,7 +121,7 @@ export default function Services() {
           >
             <ChevronRight className="w-5 h-5" />
           </button>
-        </div>
+        </motion.div>
 
         {/* View all button */}
         <div className="text-center mt-10">

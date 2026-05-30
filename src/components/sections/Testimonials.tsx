@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -38,7 +39,13 @@ export default function Testimonials() {
     <section id="testimonials" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center space-y-4 mb-12">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center space-y-4 mb-12"
+        >
           <p className="section-label">Testimonials</p>
           <h2 className="section-title">Changing lives one smile at a time</h2>
           <div className="flex justify-center gap-1.5 mb-2">
@@ -47,17 +54,29 @@ export default function Testimonials() {
             ))}
           </div>
           <p className="text-2xl font-bold text-brand">4.9 / 5.0</p>
-        </div>
+        </motion.div>
 
         {/* Desktop grid — 3 cards */}
-        <div className="hidden lg:grid grid-cols-3 gap-6 mb-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="hidden lg:grid grid-cols-3 gap-6 mb-8"
+        >
           {testimonials.slice(0, 3).map((t) => (
             <TestimonialCard key={t.name} {...t} />
           ))}
-        </div>
+        </motion.div>
 
         {/* Mobile/Tablet — slider */}
-        <div className="lg:hidden relative">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="lg:hidden relative"
+        >
           <TestimonialCard {...testimonials[current]} />
 
           <div className="flex items-center justify-center gap-4 mt-6">
@@ -87,14 +106,20 @@ export default function Testimonials() {
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Remaining 2 cards on desktop */}
-        <div className="hidden lg:grid grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="hidden lg:grid grid-cols-2 gap-6 mt-6 max-w-3xl mx-auto"
+        >
           {testimonials.slice(3, 5).map((t) => (
             <TestimonialCard key={t.name} {...t} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
