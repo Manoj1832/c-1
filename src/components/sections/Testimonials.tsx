@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const testimonials = [
