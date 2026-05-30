@@ -78,14 +78,14 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <Image
-              src="/h-dentistry-logo.png"
-              alt="H Dentistry"
-              width={190}
-              height={60}
-              priority
-              className="h-14 w-auto object-contain"
-            />
+<Image
+  src="/h-dentistry-logo.png"
+  alt="H Dentistry"
+  width={190}
+  height={60}
+  priority
+  className="object-contain"
+/>
           </Link>
 
           {/* Desktop Navigation */}

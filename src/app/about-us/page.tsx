@@ -67,7 +67,7 @@ export default function AboutUsPage() {
              {/* Image Left */}
              <div className="relative w-full h-[400px] bg-brand/5 rounded-3xl overflow-hidden flex items-center justify-center p-8 order-2 lg:order-1">
               <Image
-                src="/h-dentistry-logo.png"
+                src="/hero-left.jpg"
                 alt="H Dentistry Mission"
                 width={300}
                 height={300}
