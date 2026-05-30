@@ -42,13 +42,11 @@ export default function Testimonials() {
         <div className="text-center space-y-4 mb-12">
           <p className="section-label">Testimonials</p>
           <h2 className="section-title">Changing lives one smile at a time</h2>
-          <Image
-            src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1024&auto=format&fit=crop"
-            alt="5 star rating"
-            width={320}
-            height={48}
-            className="mx-auto object-contain"
-          />
+          <div className="flex justify-center gap-1.5 mb-2">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-6 h-6 text-yellow-400 fill-yellow-400" />
+            ))}
+          </div>
           <p className="text-2xl font-bold text-brand">4.9 / 5.0</p>
         </div>
 

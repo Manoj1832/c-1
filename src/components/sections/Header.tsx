@@ -83,6 +83,7 @@ export default function Header() {
               alt="H Dentistry"
               fill
               priority
+              sizes="(max-width: 640px) 144px, 192px"
               className="object-contain object-left"
             />
           </Link>
