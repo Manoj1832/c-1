@@ -3,25 +3,74 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand: #374151;
+  --brand-light: #F3F4F6;
+  --brand-dark: #1F2937;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+@layer base {
+  body {
+    @apply text-gray-800;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-900 capitalize;
+  }
+
+  p {
+    @apply text-base;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn-primary {
+    @apply inline-block bg-brand text-white px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:bg-brand-dark hover:shadow-lg;
+  }
+
+  .btn-outline {
+    @apply inline-block border-2 border-brand text-brand px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:bg-brand hover:text-white;
+  }
+
+  .section-label {
+    @apply text-brand font-semibold text-sm uppercase tracking-widest mb-2;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900 mb-4 capitalize;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Swiper/Carousel custom dots */
+.swiper-pagination-bullet-active {
+  background-color: var(--brand) !important;
+}
+
+/* Sticky header transition */
+.header-sticky {
+  @apply shadow-md bg-white;
+}
+
+/* Nav dropdown */
+.nav-dropdown {
+  @apply absolute top-full left-0 min-w-[220px] bg-white shadow-xl rounded-xl py-2 z-50
+         opacity-0 invisible translate-y-2 transition-all duration-200;
+}
+.nav-item:hover .nav-dropdown {
+  @apply opacity-100 visible translate-y-0;
+}
+
+/* Before/After slider */
+.before-after-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
 }
